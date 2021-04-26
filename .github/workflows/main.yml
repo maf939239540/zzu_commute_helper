@@ -18,19 +18,21 @@ jobs:
             UPW: ${{secrets.UPW}}
         run: bash ./script.sh $UID $UPW
         
-      #- name: Checkout
-       # uses: actions/checkout@v2
-        # 安装初始化python
-      - name: 'Set up Python'
-        uses: actions/setup-python@v1
+      - name: 'Get Date'
+        run: echo "REPORT_DATE=$(TZ=':Asia/Shanghai' date '+%Y-%m-%d %T')" >> $GITHUB_ENV
+      # 使用现成的发送邮箱的GitHub action来发送邮件
+      - name: 'Send mail'
+        uses: dawidd6/action-send-mail@master
         with:
-          python-version: 3.8
-        # 安装脚本所需的依赖
-      - name: 'Install requests'
-        run: pip install requests
-        # 运行脚本
-      - name: 'Working'
-        env:	#添加环境变量
-          SCKEY: ${{ secrets.SCKEY }}
-          SKEY: ${{ secrets.SKEY }}
-        run: python ./weather.py
+          # 这些是发送邮件需要配置的参数，更多详细的说明请访问具体的仓库
+          server_address: smtp.qq.com
+          server_port: 465
+          # 这些sectret的环境变量需要配置在setting中的secret下
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: 健康上报 (${{env.REPORT_DATE}})
+          body: file://result.html
+          to: madmansoul@icloud.com
+          from: GitHub Actions
+          content_type: text/html 
+  
