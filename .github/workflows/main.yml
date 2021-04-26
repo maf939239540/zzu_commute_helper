@@ -18,8 +18,8 @@ jobs:
             UPW: ${{secrets.UPW}}
         run: bash ./script.sh $UID $UPW
         
-      - name: Checkout
-        uses: actions/checkout@v2
+      #- name: Checkout
+       # uses: actions/checkout@v2
         # 安装初始化python
       - name: 'Set up Python'
         uses: actions/setup-python@v1
