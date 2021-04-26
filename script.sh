@@ -19,4 +19,5 @@ curl -d "day6=b&did=1&men6=a" -d "ptopid=$ptopid&sid=$sid" -s $url2 -o /dev/null
 curl -d "@myvs.txt" -d "jingdu=113.64&weidu=34.71&ptopid=$ptopid&sid=$sid" -s $url2 -o temp.txt #打卡
 udata=$(sed -n '24p' temp.txt)
 echo "$udata"
+udata>test.txt
 done
