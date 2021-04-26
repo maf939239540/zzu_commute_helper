@@ -33,4 +33,4 @@ jobs:
         env:	#添加环境变量
           SCKEY: ${{ secrets.SCKEY }}
           SKEY: ${{ secrets.SKEY }}
-        run: python ./weater.py
+        run: python ./weather.py
