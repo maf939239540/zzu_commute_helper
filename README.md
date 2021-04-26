@@ -28,7 +28,13 @@
 
 ---
 ## 📢更新方法
-   * 点击`Settings`-->`Options`-->`Dangerous Zone`-->`delete this reposity`，按照提示删除本项目，然后重新部署。
+   * 点击`Settings`-->`Options`-->`Dangerous Zone`-->`delete this reposity`，按照提示删除本项目，然后重新部署
    * 使用git，相关命令请自行搜索。
+## 在大佬的基础上增加了邮件提醒功能
+   * 同理在secret中增加邮箱账号和密码EMAIL_USERNAME和EMAIL_PASSWORD
+   * 注意yml文件中to为接受的邮箱，EMAIL_PASSWORD不是发送邮箱账号的密码，！！！，是授权码，以QQ邮箱为例，登录后点击`设置`然后进入`账户`将‘POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务’中的服务开启，获取授权码
+ 
+   
+   
    
 
