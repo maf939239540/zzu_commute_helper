@@ -5,7 +5,7 @@ import requests, json
 
 # SCKEY=os.environ.get('SCKEY','') ##Server酱推送KEY
 # SKey=os.environ.get('SKey','') #CoolPush酷推KEY
-SCKEY='你的Server酱推送KEY'  #通过 http://sc.ftqq.com/?c=code 获取
+SCKEY='SCT22882Tn2okM4z3oH6BMbladHiGaEgV'  #通过 http://sc.ftqq.com/?c=code 获取
 #SKey='你的CoolPush酷推KEY'  #通过 https://cp.xuthus.cc/ 获取
 def get_iciba_everyday():
     icbapi = 'http://open.iciba.com/dsapi/'
